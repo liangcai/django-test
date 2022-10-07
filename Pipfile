@@ -1,0 +1,22 @@
+[[source]]
+url = "https://mirrors.cloud.tencent.com/pypi/simple"
+verify_ssl = true
+name = "tencent"
+
+[packages]
+django = "4"
+django-reversion = "*"
+pillow = "*"
+django-allauth = "*"
+
+[dev-packages]
+django-extensions = "*"
+jupyterlab = "*"
+faker = "*"
+black = "*"
+flake8 = "*"
+flake8-django = "*"
+djlint = "*"
+
+[requires]
+python_version = "3"
