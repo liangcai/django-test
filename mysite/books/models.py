@@ -22,7 +22,7 @@ class Author(models.Model):
     salutation = models.CharField(max_length=10)
     name = models.CharField(max_length=200)
     email = models.EmailField()
-    headshot = models.ImageField(upload_to='author_headshots')
+    headshot = models.ImageField(upload_to='author_headshots', blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -32,4 +32,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField('Author')
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
-    publication_date = models.DateField()
+    publication_date = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
